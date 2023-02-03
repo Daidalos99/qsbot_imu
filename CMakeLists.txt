@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(QS_Bot_Imu)
+project(qsbot_imu)
 
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
@@ -14,7 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 ## Generate messages in the 'msg' folder
-add_message_files(FILES imu.msg)
+# add_message_files(FILES imu.msg)
 
 ## Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES  geometry_msgs   sensor_msgs   std_msgs
@@ -30,5 +30,3 @@ include_directories(include  ${catkin_INCLUDE_DIRS})
 add_executable(imu_pub src/imu_pub.cpp)
 
 target_link_libraries(imu_pub ${catkin_LIBRARIES})
-
-add_dependencies(imu_pub QS_Bot_Imu_generate_messages_cpp)
